@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  hr
+  p Welcome to #{title}!
+  p Options:
+  p   #[a(href='/rooms') /rooms] : display rooms by querying database through a VPC to VPC connection
+  p   #[a(href='/add') /add] : add a new room
+  p   #[a(href='/create') /create] : create table in the database if not exists
+  hr
+  p VPC test v1.5

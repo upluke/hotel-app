@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h2 #{title}
+  p Rooms stored in database: <em>#{url}<em>
+
+  table
+    thead
+      tr
+        th ID
+        th Floor
+        th Has View
+    tbody
+      - each room in rooms
+        tr
+          td= room.id
+          td= room.floor
+          td= room.hasView

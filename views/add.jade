@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h2= title
+  p New room can be added using the command:
+  p   curl --request POST \
+  p   --url 'https://{replac with your service url}/add?id={replace with room id}&floor={replace with floor number}&hasView={1 or 0}' \
+  p   --header 'cache-control: no-cache'
