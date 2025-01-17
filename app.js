@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const my_tracer = require('./create-a-tracer');
 const AWS = require('aws-sdk');
 
@@ -37,6 +39,7 @@ app.use(function(req, res, next) {
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
+  console.error(err.stack);
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
@@ -44,5 +47,10 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+const port = process.env.PORT || 8080;
+app.listen(port, ()=>{
+  console.log(`Server running on port ${port}`);
+})
 
 module.exports = app;
