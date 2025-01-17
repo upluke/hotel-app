@@ -1,7 +1,7 @@
-require('dotenv').config();
+ 
 
-const my_tracer = require('./create-a-tracer');
-const AWS = require('aws-sdk');
+// const my_tracer = require('./create-a-tracer');
+// const AWS = require('aws-sdk');
 
 var createError = require('http-errors');
 var express = require('express');

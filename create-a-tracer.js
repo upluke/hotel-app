@@ -44,3 +44,44 @@ tracerProvider.register({
 });
 
 module.exports = trace.getTracer("hotel-app");
+
+
+
+// ------
+
+// 'use strict'
+
+// const { trace } = require('@opentelemetry/api');
+// const { NodeTracerProvider } = require('@opentelemetry/sdk-trace-node');
+// const { BatchSpanProcessor } = require('@opentelemetry/sdk-trace-base');
+// const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-grpc');
+// const { HttpInstrumentation } = require('@opentelemetry/instrumentation-http');
+// const { MySQLInstrumentation } = require('@opentelemetry/instrumentation-mysql');
+// const { AwsInstrumentation } = require('opentelemetry-instrumentation-aws-sdk');
+// const { Resource } = require('@opentelemetry/resources');
+// const { SemanticAttributes } = require('@opentelemetry/semantic-conventions');
+// const { AWSXRayIdGenerator } = require('@opentelemetry/id-generator-aws-xray');
+// const { AWSXRayPropagator } = require('@opentelemetry/propagator-aws-xray');
+
+// const tracerProvider = new NodeTracerProvider({
+//   resource: new Resource({
+//     [SemanticAttributes.SERVICE_NAME]: "hotel-app"
+//   }),
+//   idGenerator: new AWSXRayIdGenerator(),
+//   instrumentations: [
+//     new HttpInstrumentation(),
+//     new MySQLInstrumentation(),
+//     new AwsInstrumentation({
+//       suppressInternalInstrumentation: true
+//     })
+//   ]
+// });
+
+// const otlpExporter = new OTLPTraceExporter();
+// tracerProvider.addSpanProcessor(new BatchSpanProcessor(otlpExporter));
+
+// tracerProvider.register({
+//   propagator: new AWSXRayPropagator()
+// });
+
+// module.exports = trace.getTracer("hotel-app");
